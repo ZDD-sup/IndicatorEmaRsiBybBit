@@ -17,14 +17,14 @@ STOPLOSS = 0.97
 try:
     bb = ClientBybit(ApiKey=api_key,ApiSecret=secret_key,category=CATEGORY,symbol=SYMBOL)
 
-    # list_history_price = bb.get_kline("1", 15)
-    # print(list_history_price)
+    list_history_price = bb.get_kline("1", 15)
+    print(list_history_price)
 
-    lastTime, lastPrice = bb.get_ticker()
+    # lastTime, lastPrice = bb.get_ticker()
     # print(lastTime, lastPrice)
 
-    orderId = bb.place_order(side="Sell", orderType="Market", lastPrice=lastPrice, takeProfit=TAKEPROFIT, stopLoss=STOPLOSS)
-    print(orderId)
+    # orderId = bb.place_order(side="Sell", orderType="Market", lastPrice=lastPrice, takeProfit=TAKEPROFIT, stopLoss=STOPLOSS)
+    # print(orderId)
 
 
 
