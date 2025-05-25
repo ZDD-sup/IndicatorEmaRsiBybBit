@@ -173,3 +173,24 @@ class ClientBybit:
             orderId = orderID
         )
         return result["retCode"]
+
+# ----- Информация о позиции -----
+    def info_position(self):
+        dataPosition = self.session.get_positions(
+            category = self.category,
+            symbol = self.symbol
+        )
+        return dataPosition
+
+# ----- закрытие позиции -----
+    def cancel_position(self, size, side):
+        result = self.session.place_order(
+                category = self.category,
+                symbol = self.symbol,
+                side = side,
+                orderType='Market',
+                qty = size,
+                reduceOnly=True,
+
+            )
+        return result["retCode"]
