@@ -156,3 +156,18 @@ class ClientBybit:
         elif self.category == "inverse":
             # Напиши когда-нибудь
             pass
+
+    def info_OrderId(self, orderID):
+        dataOrder = self.session.get_open_orders(
+            category = self.category,
+            orderId = orderID
+        )
+        return dataOrder
+
+    def cancel_order(self, orderID):
+        result = self.session.cancel_order(
+            category = self.category,
+            symbol = self.symbol,
+            orderId = orderID
+        )
+        return result["retCode"]
