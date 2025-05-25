@@ -157,6 +157,7 @@ class ClientBybit:
             # Напиши когда-нибудь
             pass
 
+# ----- Информация об ордере -----
     def info_OrderId(self, orderID):
         dataOrder = self.session.get_open_orders(
             category = self.category,
@@ -164,6 +165,7 @@ class ClientBybit:
         )
         return dataOrder
 
+# ----- Закрытие ордера -----
     def cancel_order(self, orderID):
         result = self.session.cancel_order(
             category = self.category,
