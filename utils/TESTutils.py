@@ -20,6 +20,7 @@ CATEGORY = "linear"
 TAKEPROFIT = 1.005
 STOPLOSS = 0.995
 TIMEORDER = 10 # секунд
+TIMEPOSITION = 10 # секунд
 
 try:
     bb = ClientBybit(ApiKey=api_key,ApiSecret=secret_key,category=CATEGORY,symbol=SYMBOL)
@@ -31,7 +32,7 @@ try:
     print(orderId)
 
     # asyncio.run(temporary_order(orderId, TIMEORDER, bb))
-    asyncio.run(temporary_position(orderId, TIMEORDER, bb))
+    asyncio.run(temporary_position(orderId, TIMEPOSITION, bb))
 
 
 except exceptions.InvalidRequestError as e:
